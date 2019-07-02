@@ -1,0 +1,55 @@
+<div class="columns col-gapless documents index">
+  <h2 class="column col-6">Document Here</h2>
+  <%= link_to new_document_path , class:"btn btn-primary btn-lg btn-action s-circle col-2 col-ml-auto" do %>
+    <i class="icon icon-plus"></i>
+  <% end %>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>name</th>
+    <th>auther</th>
+    <th>created date</th>
+    <th></th>
+  </tr>
+  </thead>
+  <% @documents.each do |document| %>
+      <tbody>
+        <tr>
+          <div>
+            <td><%= link_to(document_path(document)) do %><%= document[:file] %><% end %></td>
+            <td><%= document.user.name %></td>
+            <td><%= document.created_at %></td>
+            <td>
+              <%= link_to(document_path(document), method: :delete) do %>
+                <i class="icon icon-delete"></i>
+              <% end %>
+            </td>
+          </div>
+      </tr>
+
+    </tbody>
+  <% end %>
+</table>
+<div id='app'></div>
+<%= javascript_pack_tag 'hello_vue' %>
+
+
+
+
+
+<!--<script>-->
+<!--    import Web3 from 'web3';-->
+<!--    import { address, abi } from './contract_info.js';-->
+
+<!--    const web3 = new Web3(Web3.givenProvider);-->
+
+<!--    const contract = new web3.eth.Contract(abi, address);-->
+
+<!--    contract.methods.hello().call((error, result)=>{-->
+<!--        console.log(result)-->
+<!--    })-->
+
+<!--</script>-->
+
+

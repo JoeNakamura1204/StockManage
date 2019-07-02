@@ -1,0 +1,21 @@
+<header class="navbar">
+  <section class="navbar-section">
+    <a href="/" class="navbar-brand mr-2">StockManage</a>
+    <a href="/" class="btn btn-link">Docs</a>
+    <a href="/" class="btn btn-link">Company</a>
+  </section>
+  <section class="navbar-section">
+    <% if user_signed_in? %>
+      <%= link_to edit_user_registration_path(current_user), class: "nav-link commonNavIcon profile-icon" do %>
+        <figure class="avatar profile">
+          <%= image_tag avatar_url(current_user), class: "round-img" %>
+        </figure>
+      <% end %>
+
+      <button class="btn"><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></button>
+    <% else %>
+      <button class="btn"><%= link_to "Sign In", new_user_session_path %></button>
+    <% end  %>
+
+  </section>
+</header>

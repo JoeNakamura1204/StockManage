@@ -1,0 +1,5 @@
+<%= form_with model: @document, class: "form-group" do |f|  %>
+  <%= f.label :file, class:"form-label" %>
+  <%= f.file_field :file, class:"form-input" %>
+  <%= f.submit "アップロード", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="columns col-gapless documents index">
+  <h2 class="column col-6">Document Here</h2>
+  <div class="divider"></div>
+  <div class="column col-6"><%= image_tag @document.file.to_s %></div>
+  <%= @document[:file] %>
+  <%= @document.user.name %>
+  <%= @document.created_at %>
+</div>

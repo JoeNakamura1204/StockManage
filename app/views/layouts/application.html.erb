@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stockmanage</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <!--  navbar  -->
+  <%= render "partial/navbar" %>
+  <div class="container">
+    <div class="columns">
+      <div class="column col-10 col-mx-auto">
+        <%= yield %>
+
+      </div>
+    </div>
+  </div>
+  <!--  flash-->
+  <% unless flash.empty?  %>
+    <script type="text/javascript">
+        toastr.options = {
+            "positionClass": "toast-bottom-left"
+        }
+        <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
+        toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+    </script>
+  <% end %>
+
+  </body>
+</html>
+
+<script>
+
+
+
+</script>

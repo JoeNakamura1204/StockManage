@@ -1,0 +1,20 @@
+current directory: /Users/JoeNakamura/Stockmanage/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+/Users/JoeNakamura/.rbenv/versions/2.6.1/bin/ruby -I /Users/JoeNakamura/.rbenv/versions/2.6.1/lib/ruby/2.6.0 -r ./siteconf20190601-80388-4x6td5.rb extconf.rb
+creating Makefile
+
+current directory: /Users/JoeNakamura/Stockmanage/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/JoeNakamura/Stockmanage/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+ld: warning: directory not found for option '-L/usr/local/Cellar/llvm/5.0.1/lib/clang/5.0.1/lib'
+
+current directory: /Users/JoeNakamura/Stockmanage/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190601-80388-blm47d/byebug
