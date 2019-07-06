@@ -7,6 +7,7 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import Contract from './components/contract'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
