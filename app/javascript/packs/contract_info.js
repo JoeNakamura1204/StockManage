@@ -1,5 +1,5 @@
 //contract address & abi
-export const address = "0x5351ee6da3f6dec89289340f3d5042c0807b3af4";
+export const address = "0xfe0a2eddd0105a52fb5b1ba0d447c4bb4da135f7";
 
 export const abi =[
     {
@@ -15,6 +15,18 @@ export const abi =[
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "_metadata",
+                "type": "string"
+            }
+        ],
+        "name": "completeMined",
+        "type": "event"
     },
     {
         "constant": true,
