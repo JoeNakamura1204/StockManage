@@ -16,3 +16,6 @@
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker')
+
+// const metadata = gon.metadata;
+// console.log(metadata)

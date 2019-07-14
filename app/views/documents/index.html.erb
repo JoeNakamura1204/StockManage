@@ -9,6 +9,7 @@
   <tr>
     <th>name</th>
     <th>auther</th>
+    <th class="transactionHash">Transaction Hash</th>
     <th>created date</th>
     <th></th>
   </tr>
@@ -19,7 +20,12 @@
           <div>
             <td><%= link_to(document_path(document)) do %><%= document[:file] %><% end %></td>
             <td><%= document.user.name %></td>
-            <td><%= document.created_at %></td>
+            <td >
+              <%= link_to("/") do %>
+                0xba32cabc0dc5f37c15aca417803fbee68b5d85fe2268ba4f9f89d4cd141b6a54
+              <% end %>
+            </td>
+            <td><%= document.created_at.strftime("%Y年%m月%d日") %></td>
             <td>
               <%= link_to(document_path(document), method: :delete) do %>
                 <i class="icon icon-delete"></i>
@@ -27,29 +33,13 @@
             </td>
           </div>
       </tr>
-
     </tbody>
   <% end %>
 </table>
 <div id='app'></div>
 <%= javascript_pack_tag 'hello_vue' %>
 
-
-
-
-
-<!--<script>-->
-<!--    import Web3 from 'web3';-->
-<!--    import { address, abi } from './contract_info.js';-->
-
-<!--    const web3 = new Web3(Web3.givenProvider);-->
-
-<!--    const contract = new web3.eth.Contract(abi, address);-->
-
-<!--    contract.methods.hello().call((error, result)=>{-->
-<!--        console.log(result)-->
-<!--    })-->
-
-<!--</script>-->
-
-
+<script type="text/javascript" charset="utf-8">
+  const mm = gon.metadata;
+  console.log(mm)
+</script>

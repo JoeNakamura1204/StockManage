@@ -7,16 +7,15 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
-import Contract from './components/contract'
 
 document.addEventListener('DOMContentLoaded', () => {
+  // const metadata = gon.metadata;
+  // console.log(metadata)
   const app = new Vue({
     render: h => h(App)
-  }).$mount()
+  }).$mount();
   document.body.appendChild(app.$el)
-
-  console.log(app)
-})
+});
 
 
 // The above code uses Vue without the compiler, which means you cannot
