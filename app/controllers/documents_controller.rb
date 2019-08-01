@@ -3,19 +3,11 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i(show destroy)
 
-  ETHEREUM_TOKEN_PATH = "#{Dir.pwd}/contract/StockManage.sol"
-  ROPSTEN_URL = 'HTTP://127.0.0.1:7545'
-  @client = Ethereum::HttpClient.new(ROPSTEN_URL)
-  @client.default_account = "0x051337fA7424e6fB9215f5a60eB2ADB45bEB8Cfb"
-  @contract = Ethereum::Contract.create(file: ETHEREUM_TOKEN_PATH, client: @client)
-  @contract.deploy_and_wait
-
   # @contract = Ethereum::Contract.create(name: "ManageDocument", address: "0xecc2307b547b8ccabb800f4de0290b7ac0f85ee4",client: @client
   # binding.pry
 
   def index
     @documents = Document.all
-    gon.metadata = "gon"
   end
 
   def new
