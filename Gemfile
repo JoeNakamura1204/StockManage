@@ -72,5 +72,4 @@ gem 'jquery-rails'
 
 gem 'webpacker', github: 'rails/webpacker'
 
-gem 'gon'
 gem 'ethereum.rb'
