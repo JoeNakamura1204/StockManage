@@ -1,0 +1,28 @@
+.sidebar{
+  position: fixed;
+  width: 64px;
+  background-color: #252d6b;
+  color: white;
+  height: 100%;
+
+  ul{
+    margin: 100px 0px 0px 0px;
+    list-style: none;
+    text-align: center;
+
+    .item{
+      width:64px;
+      height: 64px;
+
+      &:hover{
+        color: gray;
+      }
+      i{
+        font-size: 25px;
+      }
+      span{
+        font-size: 11px;
+      }
+    }
+  }
+}

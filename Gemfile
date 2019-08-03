@@ -72,4 +72,4 @@ gem 'jquery-rails'
 
 gem 'webpacker', github: 'rails/webpacker'
 
-gem 'ethereum.rb'
+gem 'font-awesome-sass', '~> 5.4.1'
