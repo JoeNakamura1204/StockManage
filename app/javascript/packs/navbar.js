@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     mounted() {
+      console.log("OKOK");
       let web3 = new Web3(Web3.givenProvider);
 
       console.log(web3.currentProvider);
