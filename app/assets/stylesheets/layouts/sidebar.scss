@@ -17,6 +17,15 @@
       &:hover{
         color: gray;
       }
+
+      a{
+        color: white;
+
+        &:hover{
+          color: gray;
+          text-decoration: none;
+        }
+      }
       i{
         font-size: 25px;
       }

@@ -1,19 +1,25 @@
 <header class="navbar">
-  <section class="navbar-section">
-    <a href="/" class="navbar-brand mr-2">StockManage</a>
+  <section class="navbar-section left">
+    <a href="/" class="navbar-brand mr-2">
+      <%= image_tag 'logo.svg' %>
+    </a>
   </section>
-  <section class="navbar-section">
+  <section class="navbar-section right">
+    <div class="provider">
+      <i class="fas fa-circle"></i>
+      <div id="current_provider"></div>
+    </div>
     <% if user_signed_in? %>
       <%= link_to edit_user_registration_path(current_user), class: "nav-link commonNavIcon profile-icon" do %>
         <figure class="avatar profile">
           <%= image_tag avatar_url(current_user), class: "round-img" %>
         </figure>
       <% end %>
-
-      <button class="btn"><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></button>
+    <div id="user_address"></div>
+      <!--      <button class="btn"><%#= link_to "Sign Out", destroy_user_session_path, method: :delete  %></button>-->
     <% else %>
       <button class="btn"><%= link_to "Sign In", new_user_session_path %></button>
     <% end  %>
-
   </section>
 </header>
+<%= javascript_pack_tag 'navbar' %>

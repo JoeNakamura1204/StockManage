@@ -5,14 +5,38 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import App from '../app.vue'
+import Vue from 'vue/dist/vue.esm'
+import Web3 from 'web3'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App)
-  }).$mount();
-  document.body.appendChild(app.$el)
+  new Vue({
+    el:'#user_address',
+    data:function(){
+      return{
+        my_account:"",
+        current_provider:""
+      }
+    },
+    mounted() {
+      let web3 = new Web3(Web3.givenProvider);
+
+      console.log(web3.currentProvider);
+      //check provider
+        this.current_provider= web3.currentProvider.networkVersion;
+        if(this.current_provider =="42"){
+          document.getElementById('current_provider').innerText= "Kovan Testnet"
+        }else if(this.current_provider=="3"){
+          document.getElementById('current_provider').innerText= "Ropsten Testnet"
+        }else{
+          document.getElementById('current_provider').innerText= "Some network"
+        }
+      //get account
+      web3.eth.getAccounts().then((account)=>{
+        this.my_account = account;
+        document.getElementById('user_address').innerText = this.my_account;
+      });
+    },
+  })
 });
 
 
