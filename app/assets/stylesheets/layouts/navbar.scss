@@ -4,24 +4,32 @@
   border-bottom: solid 1px gainsboro;
 }
 
-.navbar-section.right{
+.navbar-section.right {
   margin-left: 350px;
 
-  .provider{
-    width:145px;
+  .provider {
+    width: 145px;
     display: flex;
-    i{
+
+    i {
       color: palegreen;
       line-height: 50px;
       margin-right: 10px;
     }
+
     #current_provider {
       width: 130px;
       line-height: 50px;
     }
   }
-}
 
+  .dropdown {
+    .btn.btn-link.dropdown-toggle {
+      padding: 0px;
+      width: 40px;
+    }
+  }
+}
 .avatar.profile{
   margin-right: 1rem;
 }

@@ -5,37 +5,29 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue/dist/vue.esm'
-import Web3 from 'web3'
+import Web_connect from "web3";
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    el:'#user_address',
-    data:function(){
-      return{
-        my_account:"",
-        current_provider:""
-      }
-    },
-    mounted() {
-      let web3 = new Web3(Web3.givenProvider);
-      //check provider
-        this.current_provider= web3.currentProvider.networkVersion;
-        if(this.current_provider =="42"){
-          document.getElementById('current_provider').innerText= "Kovan Testnet"
-        }else if(this.current_provider=="3"){
-          document.getElementById('current_provider').innerText= "Ropsten Testnet"
+export const web3 = {
+    mounted:function () {
+            if (typeof web3 !== 'undefined') {
+            let web3 = new Web_connect(Web3.givenProvider);
+            let password_sign = "Hello, World";
+            web3.eth.getAccounts().then((account)=>{
+                this.my_account =account
+            });
+            web3.eth.personal.sign(
+                password_sign,
+                this.my_account,
+                "test password"
+            );
         }else{
-          document.getElementById('current_provider').innerText= "Some network"
+            alert('MetaMaskをインストールして下さい');
         }
-      //get account
-      web3.eth.getAccounts().then((account)=>{
-        this.my_account = account;
-        document.getElementById('user_address').innerText = this.my_account;
-      });
     },
-  })
-});
+
+};
+
+
 
 
 // The above code uses Vue without the compiler, which means you cannot

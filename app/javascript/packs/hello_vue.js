@@ -5,14 +5,21 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import App from '../app.vue'
+import Vue from 'vue/dist/vue.esm'
+// import { web3 } from './web3_connect'
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App)
-  }).$mount();
-  document.body.appendChild(app.$el)
+new Vue({
+   el:'#app',
+   // mixins: [web3],
+   data:function(){
+     return{
+     }
+   },
+   mounted(){
+   }
+  });
 });
 
 
